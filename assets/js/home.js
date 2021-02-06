@@ -4,17 +4,17 @@ var aboutContainer = document.querySelector('.about-myself')
 var aboutCards = [{
         icon: 'far fa-4x fa-user',
         title: 'Damodar M',
-        desc: 'National Level Player, University Blue, Fide Rating: 1227'
+        desc: 'National Level Player, Fide Rating: 1227'
     },
     {
         icon: 'far fa-4x fa-user',
         title: 'Parthsarthy R',
-        desc: 'Commonwealth Player, University Blue, Fide Rating: 1992'
+        desc: 'Commonwealth Player, Fide Rating: 1992'
     },
     {
         icon: 'far fa-4x fa-user',
         title: 'Jatin S N',
-        desc: 'World Amateur Champion, University Blue, Fide Rating: 1705'
+        desc: 'World Amateur Champion, Fide Rating: 1705'
     }
 ]
 
