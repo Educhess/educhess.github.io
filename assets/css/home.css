@@ -226,3 +226,35 @@ a:hover:not(.brand-logo) {
         margin-top: 5rem;
     }
 }
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.btn {
+  border: 2px solid darken(#F5EFE1, 15%);
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 80px;
+}
+
+.myButton {
+  @extend .btn;
+  background: darken(#F5EFE1, 5%);
+  color: darken(#F5EFE1, 60%);
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transform: skewX(20deg);
+}
