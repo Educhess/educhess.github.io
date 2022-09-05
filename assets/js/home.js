@@ -3,18 +3,33 @@ var aboutContainer = document.querySelector('.about-myself')
     //array containing objects with details to be shown
 var aboutCards = [{
         icon: 'far fa-4x fa-user',
-        title: 'Damodar M',
-        desc: 'National Level Player, Fide Rating: 1227'
+        title: 'Manasa | 1609',
+        desc: 'International chess player, Bronze medallist (Asia), 3 times Silver medalist (Country - India), 8 times gold medalist (State - Karnataka)'
     },
     {
         icon: 'far fa-4x fa-user',
-        title: 'Parthsarthy R',
-        desc: 'Commonwealth Player, Fide Rating: 1992'
+        title: 'Damodar M | 1227',
+        desc: 'National Level Player, University Nationals'
     },
     {
         icon: 'far fa-4x fa-user',
-        title: 'Jatin S N',
-        desc: 'World Amateur Champion, Fide Rating: 1705'
+        title: 'Parthsarthy R | 1992',
+        desc: 'International level, National Under 25 - 5th Place, State Championship - 3rd Place'
+    },
+    {
+        icon: 'far fa-4x fa-user',
+        title: 'Jatin S N | 1705',
+        desc: 'World amateur chess champion, 2018, Played Commonwealth, Asian schools and Grandmaster tournaments'
+    },
+    {
+        icon: 'far fa-4x fa-user',
+        title: 'Nikhil Singh | 1512',
+        desc: 'International chess player, National level player (4 times), 3rd State level'
+    },
+    {
+        icon: 'far fa-4x fa-user',
+        title: 'Nitin S N | 1132',
+        desc: 'Commonwealth and Asian school, 5th in State'
     }
 ]
 
