@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+
+html[data-theme="light"] {
+  --col-icon: black;
+  --col-bd-radius: rgb(2, 2, 2);
+  --col-box-shadow: #000000 2px 2px 4px, #4d4d4d -2px -2px 4px;
+  --col-box-shadow-hover: inset #8a7373 2px 2px 4px, inset #4d4d4d -2px -2px 4px;
+  --col-bd-icon: transparent;
+  --bg-icon: #fff;
+  --bg1-color: #fff;
+  --col-icon-twitter: #1da1f2;
+  --col-icon-facebook: #4867aa;
+  --col-icon-linkedin: #0e76a8;
+  --col-icon-instagram: #c95eae;
+  --shadow-col: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] {
+  --col-icon: white;
+  --col-bd-radius: black;
+  --col-bd-icon: transparent;
+  --col-box-shadow: 5px 5px 10px rgba(22, 21, 21, 0.7),
+    -5px -5px 10px rgba(255, 255, 255, 0.1);
+  --col-box-shadow-hover: inset rgba(255, 255, 255, 1) 2px 2px 4px,
+    inset rgba(255, 255, 255, 0.5) -2px -2px 4px;
+  --col-icon-twitter: #1da1f2;
+  --col-icon-facebook: #4867aa;
+  --col-icon-linkedin: #0e76a8;
+  --col-icon-instagram: rgb(201, 94, 174);
+  --col-white: #fff;
+  --bg-icon: #000;
+  --bg1-color: #000;
+}
+
+.home {
+  background-color: var(--bg1-color);
+}
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+*{
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#particles-js{ 
+  position:absolute; 
+  width: 100%; height: 100%;
+   background-color: #a0beaf;
+    background-image: url("");
+     background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+
+#loginbox{ 
+  z-index:100;
+  opacity: 0.75;
+  margin-top:8%;
+  margin-bottom:18%;
+  margin-bottom:25px ;
+}
+#glasscard{ 
+  z-index:100;
+  opacity: 1;
+  margin-top:1%;
+  margin-top: 100px ;
+}
