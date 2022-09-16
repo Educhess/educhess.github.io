@@ -11,6 +11,8 @@ import Gallerypics from './Gallerypics.js';
 import ContactForm from './contactform.jsx';
 import Dailypuzzle from './Dashboard/components/dailypuzzle.jsx';
 import back from './photos/back.png';
+import bgimg from './photos/bgimg.png';
+import Courses_info from './components/Course_info';
 import { useInView } from 'react-intersection-observer';
 
 const AppContainer = styled.div`
@@ -38,9 +40,9 @@ function Home() {
             {/*}  <AppContainer>
             <Particle />
     </AppContainer> */}
-            <img className="back" src={back} style={{ width: '100vw', height: '150px;' }} alt="" />
+            <img className="back" src={bgimg} style={{ width: '100vw', height: '150px;' }} alt="" />
 
-
+            <div >  < Courses_info /> </div>
             <div >  <Infocard /> </div>
             {/*}    <Toggle /> */}
             {/* <Gallerypics className="bg-purple-50" /> */}

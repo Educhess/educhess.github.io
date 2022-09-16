@@ -1,7 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./contact.css";
-import ReactDOM from 'react-dom';
+import { Grid, } from '@material-ui/core';
+import Controls from "./components/controls/Controls";
+import { useForm, Form } from './components/useForm';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import FilledInput from '@mui/material/FilledInput';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+// import Visibility from '@mui/icons-material/Visibility';
+// import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+const LevelItem = [
+  { id: 'Beginner', title: 'Beginner' },
+  { id: 'Intermediate', title: 'Intermediate' },
+  { id: 'Advanced', title: 'Advanced' },
+]
 
 const ContactForm = () => {
   const [data, setData] = useState({
@@ -9,9 +28,10 @@ const ContactForm = () => {
     contact_number: "",
     Date_of_birth: "",
     email: "",
-    message: "",
+    level: "",
+    referal: "",
   })
-  const { name, contact_number, email, message, Date_of_birth } = data
+  const { name, contact_number, email, Date_of_birth, level, referal } = data
 
   const handleChange = e =>
     setData({ ...data, [e.target.name]: e.target.value })
@@ -27,73 +47,96 @@ const ContactForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify([
-            [name, contact_number, email, message, Date_of_birth, new Date().toLocaleString()],
+            [name, contact_number, email, Date_of_birth, level, referal, new Date().toLocaleString()],
           ]),
         }
       );
       await response.json()
       //  document.getElementById("success"),innerHTML = "Thank you for reaching out to us!";
       alert("We have recieved your message. Someone from our team will contact you soon")
-      setData({ ...data, name: '', contact_number: '', email: '', message: '', Date_of_birth: '' })
+      setData({ ...data, name: '', contact_number: '', email: '', Date_of_birth: '', level: '', referal: '' })
     } catch (err) {
       console.log(err)
     };
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit} style={{ marginTop: '70px', marginLeft: '1px', width: '40%', height: '35%', align: 'center' }}>
-      <h1>Contact Us 🤳</h1>
+    <Form>
+      <form className="form" onSubmit={handleSubmit} style={{ marginTop: '70px', marginLeft: '1px', width: '40%', height: '35%', align: 'center', display: 'flex' }}>
+        <h1>Contact Us 🤳</h1>
+        <Grid container>
+          <Grid item xs={6}>
+            <Controls.Input
+              type="Name"
+              name="name"
+              label="Name"
+              value={name}
+              onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
+            // error={errors.fullName}
+            />
 
-      <label>Name</label>
-      <input
-        placeholder="Name"
-        name="name"
-        value={name}
-        onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
-      />
-      <label>Contact number</label>
-      <input
-        placeholder="Contact number"
-        name="contact number"
-        value={contact_number}
-        onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
-      />
+            <Controls.Input
+              type="email"
+              name="email"
+              label="Email"
+              value={email}
+              onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
+            // error={errors.fullName}
+            />
 
-      <label>Date_of_birth</label>
-      <input
-        type="date"
-        placeholder="Date Of Birth"
-        name="Date Of Birth"
-        value={Date}
-        onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
-      />
+            <Controls.Input
+              type="phone"
+              name="contact_number"
+              label="Contact Number"
+              value={contact_number}
+              onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
+            // error={errors.fullName}
+            />
 
-      <label>Email</label>
-      <input
-        type="email"
-        placeholder="Email"
-        name="email"
-        value={email}
-        onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
-      />
+            <Controls.DatePicker
+              type="date"
+              name="Date_of_birth"
+              // label="Date_of_birth"
+              value={Date_of_birth}
+              onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
+            // error={errors.fullName}
+            />
 
-      <label>Message</label>
-      <textarea
-        placeholder="Message"
-        name="message"
-        value={message}
-        onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
-      ></textarea>
+            <Controls.Input
+              type="text"
+              name="referal"
+              label="Referal Code"
+              value={referal}
+              onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
+            // error={errors.fullName}
+            />
 
-      <button
-        type="submit"
-        style={{ background: " rgb(2, 2, 110)", width: '30%', height: '10%' }}
-      >
-        Submit
-      </button>
-      <p id="success" style={{ color: 'green' }}></p>
-    </form >
+          </Grid>
+          <Grid item xs={6}>
+            <Controls.RadioGroup
+              name="level"
+              label="Level"
+              value={level}
+              items={LevelItem}
+              onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
 
+            />
+
+          </Grid>
+        </Grid>
+
+
+
+        <Controls.Button
+          type="submit"
+          style={{ background: " rgb(2, 2, 110)", width: '30%', height: '10%' }}
+        >
+          Submit
+        </Controls.Button>
+        <p id="success" style={{ color: 'green' }}></p>
+
+      </form >
+    </Form>
   );
 };
 export default ContactForm;

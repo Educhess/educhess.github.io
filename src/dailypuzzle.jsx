@@ -5,15 +5,15 @@ import styled from "styled-components";
 const iframe = '<iframe src="https://lichess.org/training/frame?theme=brown&bg=dark" style="width: 400px; height: 444px;" allowtransparency="true" frameborder="0"></iframe>'
 
 function Iframe(props) {
-  return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
-} 
+  return (<div dangerouslySetInnerHTML={{ __html: props.iframe ? props.iframe : "" }} />);
+}
 
 function Dailypuzzle() {
   return (
     <Dailypuzzlee>
-    <section>
-    <Iframe iframe={iframe} />,
-    </section>
+      <section>
+        <Iframe iframe={iframe} />,
+      </section>
     </Dailypuzzlee>
   );
 }
