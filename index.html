@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="white">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -65,9 +65,11 @@
     </div>
 
     <!--About Section-->
-
+    <!-- Do not play with this, unless you are pretty sure about what you are doing. 64px correspond to the height of the main nav bar
+    if nav bar height is changed do change the height value as well.-->
+    <div  id="whatareweupto" style="height: 64px"></div>
     <div class="section bg-blue">
-        <section id="about">
+        <section>
             <h1 class="h1 ml-5 mb-5 text-right white-text">So what are we upto
                 <hr class="bg-white">
             </h1>
@@ -109,9 +111,9 @@
             <p>We are into&nbsp;
                 <h1 class="animated-text" data-words="Mentoring, Training materials, Game analysis"></h1>
             </p>
-            <div>
+            <!-- <div>
                <button class="myButton" data-label="Click Me" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSeM2AGzmRAeGuoQvEnJqFh72rGB-w0wgn_0rpfUZKzJfedZlQ/viewform'">Register</button>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -126,8 +128,22 @@
         </div>
 
 
-        <!-- 4 Block - Data is being recieved from home.js -->
-        <div class="row row-cols-md-4 row-cols-1 text-center align-items-stretch about-myself">
+        <!-- Instructors Block - Data is being recieved from home.js -->
+        <div class="row row-cols-md-3 row-cols-1 text-center align-items-stretch about-myself">
+
+        </div>
+    </section>
+
+    <section class="container-fluid py-5 my-3" id="pricing">
+        <div class="row justify-content-center">
+            <div class="col-md-9 text-center">
+                <h2 class="mb-3">
+                    <span class="text-blue">Pricing and Demo</span>
+                </h2>
+            </div>
+
+            <!-- Pricing Block - Data is being recieved from pricing.js -->
+        <div class="row row-cols-md-3 row-cols-1 text-center align-items-stretch pricing">
 
         </div>
     </section>
@@ -141,6 +157,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script src="assets/js/main.js"></script>
     <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/pricing.js"></script>
     <script type="text/javascript" src="assets/js/materialize.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
     <script src="assets/js/particle.js"></script>

@@ -1,230 +1,229 @@
 /*Declaration of CSS variables for light/dark theme*/
 
 html[data-theme="light"] {
-    --col-icon: black;
-    --col-bd-radius: rgb(2, 2, 2);
-    --col-box-shadow: #000000 2px 2px 4px, #4D4D4D -2px -2px 4px;
-    --col-box-shadow-hover: inset #8a7373 2px 2px 4px, inset #4D4D4D -2px -2px 4px;
-    --col-bd-icon: transparent;
-    --bg-icon: #fff;
-    --bg1-color: #fff;
-    --col-icon-twitter: #1da1f2;
-    --col-icon-facebook: #4867AA;
-    --col-icon-linkedin: #0e76a8;
-    --col-icon-instagram: #c95eae;
-    --shadow-col: rgba(0, 0, 0, 0.3);
+  --col-icon: black;
+  --col-bd-radius: rgb(2, 2, 2);
+  --col-box-shadow: #000000 2px 2px 4px, #4d4d4d -2px -2px 4px;
+  --col-box-shadow-hover: inset #8a7373 2px 2px 4px, inset #4d4d4d -2px -2px 4px;
+  --col-bd-icon: transparent;
+  --bg-icon: #fff;
+  --bg1-color: #fff;
+  --col-icon-twitter: #1da1f2;
+  --col-icon-facebook: #4867aa;
+  --col-icon-linkedin: #0e76a8;
+  --col-icon-instagram: #c95eae;
+  --shadow-col: rgba(0, 0, 0, 0.3);
 }
 
 html[data-theme="dark"] {
-    --col-icon: white;
-    --col-bd-radius: black;
-    --col-bd-icon: transparent;
-    --col-box-shadow: 5px 5px 10px rgba(22, 21, 21, 0.7), -5px -5px 10px rgba(255, 255, 255, 0.1);
-    --col-box-shadow-hover: inset rgba(255, 255, 255, 1) 2px 2px 4px, inset rgba(255, 255, 255, 0.5) -2px -2px 4px;
-    --col-icon-twitter: #1da1f2;
-    --col-icon-facebook: #4867AA;
-    --col-icon-linkedin: #0e76a8;
-    --col-icon-instagram: rgb(201, 94, 174);
-    --col-white: #fff;
+  --col-icon: white;
+  --col-bd-radius: black;
+  --col-bd-icon: transparent;
+  --col-box-shadow: 5px 5px 10px rgba(22, 21, 21, 0.7),
+    -5px -5px 10px rgba(255, 255, 255, 0.1);
+  --col-box-shadow-hover: inset rgba(255, 255, 255, 1) 2px 2px 4px,
+    inset rgba(255, 255, 255, 0.5) -2px -2px 4px;
+  --col-icon-twitter: #1da1f2;
+  --col-icon-facebook: #4867aa;
+  --col-icon-linkedin: #0e76a8;
+  --col-icon-instagram: rgb(201, 94, 174);
+  --col-white: #fff;
 }
-
 
 /* Particle effect*/
 
 #home,
 #particles-js {
-    position: relative;
-    height: 100vh;
-    width: 100%;
+  position: relative;
+  height: 100vh;
+  width: 100%;
 }
 
 .section {
-    background-color: rgb(63, 25, 170);
-    justify-content: center;
-    align-items: center;
+  background-color: rgb(63, 25, 170);
+  justify-content: center;
+  align-items: center;
 }
 
 .text span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .text {
-    font-size: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+  font-size: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 
 .animated-text span {
-    display: none;
-    line-height: 1;
+  display: none;
+  line-height: 1;
 }
 
 .animated-text span.active {
-    display: inline-block;
+  display: inline-block;
 }
 
 .animated-text:after {
-    content: ".";
-    display: inline-block;
-    width: 10px;
-    text-indent: 0;
-    /* overflow: hidden; */
-    background: var(--col-icon);
-    animation: blink 0.3s infinite alternate;
+  content: ".";
+  display: inline-block;
+  width: 10px;
+  text-indent: 0;
+  /* overflow: hidden; */
+  background: var(--col-icon);
+  animation: blink 0.3s infinite alternate;
 }
 
 @keyframes blink {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
 
 /*Social icons*/
 
 :root {
-    --link-size: 64px;
-    --trans-props: all 0.2s ease;
-    --link-size-footer-b: 40px;
-    --link-size-footer-s: 30px;
+  --link-size: 64px;
+  --trans-props: all 0.2s ease;
+  --link-size-footer-b: 40px;
+  --link-size-footer-s: 30px;
 }
 
 .social-icons {
-    display: flex;
-    font-size: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row wrap;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 .socialicon {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    width: var(--link-size);
-    height: var(--link-size);
-    margin: 8px;
-    text-decoration: none;
-    transition: var(--trans-props);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: var(--link-size);
+  height: var(--link-size);
+  margin: 8px;
+  text-decoration: none;
+  transition: var(--trans-props);
 }
 
 .socialicon {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    width: var(--link-size);
-    height: var(--link-size);
-    background-color: #fff;
-    margin: 8px;
-    border-radius: 50%;
-    box-shadow: 2px 5px 5px var(--shadow-col);
-    text-decoration: none;
-    transition: var(--trans-props);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: var(--link-size);
+  height: var(--link-size);
+  background-color: #fff;
+  margin: 8px;
+  border-radius: 50%;
+  box-shadow: 2px 5px 5px var(--shadow-col);
+  text-decoration: none;
+  transition: var(--trans-props);
 }
 
 .socialicon i {
-    margin: auto;
-    font-size: 24px;
-    z-index: 1;
-    transition: var(--trans-props);
+  margin: auto;
+  font-size: 24px;
+  z-index: 1;
+  transition: var(--trans-props);
 }
 
 .facebook i {
-    margin: auto;
-    font-size: 24px;
-    z-index: 1;
-    transition: var(--trans-props);
+  margin: auto;
+  font-size: 24px;
+  z-index: 1;
+  transition: var(--trans-props);
 }
 
 .instagram i {
-    margin: auto;
-    font-size: 24px;
-    z-index: 1;
-    transition: var(--trans-props);
+  margin: auto;
+  font-size: 24px;
+  z-index: 1;
+  transition: var(--trans-props);
 }
 
 .linkedin i {
-    margin: auto;
-    font-size: 24px;
-    z-index: 1;
-    transition: var(--trans-props);
+  margin: auto;
+  font-size: 24px;
+  z-index: 1;
+  transition: var(--trans-props);
 }
 
 .socialicon.twitter {
-    color: var(--col-icon-twitter);
+  color: var(--col-icon-twitter);
 }
 
 .socialicon.instagram {
-    color: var(--col-icon-instagram);
+  color: var(--col-icon-instagram);
 }
 
 .socialicon.facebook {
-    color: var(--col-icon-facebook);
+  color: var(--col-icon-facebook);
 }
 
 .socialicon.linkedin {
-    color: var(--col-icon-linkedin);
+  color: var(--col-icon-linkedin);
 }
 
 .socialicon:after {
-    content: "";
-    width: var(--link-size);
-    height: var(--link-size);
-    position: absolute;
-    transform: translate(0, var(--link-size));
-    border-radius: 50%;
-    transition: var(--trans-props);
+  content: "";
+  width: var(--link-size);
+  height: var(--link-size);
+  position: absolute;
+  transform: translate(0, var(--link-size));
+  border-radius: 50%;
+  transition: var(--trans-props);
 }
 
 .socialicon.twitter:after {
-    background-color: #1da1f2;
-    box-shadow: var(--twitter);
+  background-color: #1da1f2;
+  box-shadow: var(--twitter);
 }
 
 .socialicon.instagram:after {
-    background-color: #c95eae;
-    box-shadow: var(--instagram);
+  background-color: #c95eae;
+  box-shadow: var(--instagram);
 }
 
 .socialicon.facebook:after {
-    background-color: #0e76a8;
-    box-shadow: var(--facebook);
+  background-color: #0e76a8;
+  box-shadow: var(--facebook);
 }
 
 .socialicon.linkedin:after {
-    background-color: #41aff3;
-    box-shadow: var(--linkedin);
+  background-color: #41aff3;
+  box-shadow: var(--linkedin);
 }
-
 
 /*** Social Icon Animations ***/
 
 .socialicon:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 .socialicon:hover:after {
-    transform: translate(0) scale(1.2);
+  transform: translate(0) scale(1.2);
 }
 
 .socialicon:hover i {
-    color: #fff;
+  color: #fff;
 }
 
 a:hover:not(.brand-logo) {
-    color: transparent;
+  color: transparent;
 }
 
 @media only screen and (max-width: 450px) {
-    .text {
-        margin-top: 5rem;
-    }
+  .text {
+    margin-top: 5rem;
+  }
 }
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 
@@ -241,7 +240,7 @@ a:hover:not(.brand-logo) {
 }
 
 .btn {
-  border: 2px solid darken(#F5EFE1, 15%);
+  border: 2px solid darken(#f5efe1, 15%);
   border-radius: 8px;
   cursor: pointer;
   min-width: 250px;
@@ -250,13 +249,40 @@ a:hover:not(.brand-logo) {
 
 .myButton {
   @extend .btn;
-  background: darken(#F5EFE1, 5%);
-  color: darken(#F5EFE1, 60%);
-  font-family: 'Poppins', serif;
+  background: darken(#f5efe1, 5%);
+  color: darken(#f5efe1, 60%);
+  font-family: "Poppins", serif;
   font-size: 1.3rem;
   letter-spacing: 0.5px;
   position: relative;
   min-width: 180px;
   min-height: 60px;
   border-radius: 8px;
+}
+
+.card {
+  height: 100%;
+}
+.card > .card-content {
+  width: inherit;
+  height: inherit;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pricing__footer {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pricing__footer--strike {
+  text-decoration: line-through;
+}
+
+.pricing__footer--bold {
+  font-weight: bolder;
 }
