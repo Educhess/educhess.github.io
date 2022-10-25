@@ -33,17 +33,24 @@ if (mybutton) {
 //Footer and Navbar
 
 let header = $(`
+<!-- Dropdown Structure -->
+<ul id="country" class="dropdown-content black-text">
+  <li><a class="black-text" onclick="changeCountry('IND');">India</a></li>
+  <li><a class="black-text" onclick="changeCountry('ROW');">Rest of World</a></li>
+</ul>
 <nav class="fixed-top black">
 <div class="nav-wrapper">
-  <a href="#!" class="brand-logo">Educhess</a>
+  <a class="brand-logo">Educhess</a>
   <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
           class="material-icons">menu</i></a>
  <ul class="right hide-on-med-and-down">
-      <li><a class="white-text" href="index.html">Home</a></li>
-      <li><a class="white-text" href="#whatareweupto">What are we upto?</a></li>
-      <li><a class="white-text" href="#about">About Us</a></li>
-      <li><a class="white-text" href="#pricing">Pricing</a></li>
-      <li><a class="white-text" href="#book">Book Now</a></li> 
+    <li><a class="white-text" href="index.html">Home</a></li>
+    <li><a class="white-text" href="#whatareweupto">What are we upto?</a></li>
+    <li><a class="white-text" href="#about">About Us</a></li>
+    <li><a class="white-text" href="#pricing">Pricing</a></li>
+    <li><a class="white-text" href="#book">Book Now</a></li>
+    <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger white-text" data-target="country">Country<i class="material-icons right">arrow_drop_down</i></a></li>
     
       <!-- <li>
         <label for="switch-1" class="theme-switch">
@@ -67,11 +74,13 @@ let header = $(`
 <!--Side Nav Bar -->
 <ul class="sidenav" id="mobile-demo">
   <li><a class="sidenav-close" href="#!"><i class="material-icons">close</i></a></li>
-  <li><a class="white-text" href="index.html">Home</a></li>
-  <li><a class="white-text" href="#whatareweupto">What are we upto?</a></li>
-  <li><a class="white-text" href="#about">About Us</a></li>
-  <li><a class="white-text" href="#pricing">Pricing</a></li>
-  <li><a class="white-text" href="#book">Book Now</a></li>
+  <li><a class="black-text" href="index.html">Home</a></li>
+  <li><a class="black-text" href="#whatareweupto">What are we upto?</a></li>
+  <li><a class="black-text" href="#about">About Us</a></li>
+  <li><a class="black-text" href="#pricing">Pricing</a></li>
+  <li><a class="black-text" href="#book">Book Now</a></li>
+  <!-- Dropdown Trigger -->
+  <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
 
       <!-- <li>
         <label for="switch-2" class="theme-switch">
@@ -213,4 +222,17 @@ if (checkbox) {
       });
     });
   };
+}
+
+$(document).ready(function () {
+  $(".dropdown-trigger").dropdown();
+});
+
+function changeCountry(country) {
+  if (country === "IND") {
+    localStorage.setItem("country", country);
+  } else {
+    localStorage.setItem("country", "ROW");
+  }
+  window.location.reload();
 }

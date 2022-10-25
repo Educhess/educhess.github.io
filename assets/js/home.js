@@ -9,12 +9,16 @@ const defaultFemaleImage =
 //array containing objects with details to be shown
 var aboutCards = [
   {
-    image: defaultFemaleImage,
+    image:
+      imageSrc +
+      "manasa.png?alt=media&token=33fa8088-b7f1-4238-8707-2498c6b541ce",
     title: "Manasa | 1609",
     desc: "International chess player, Bronze medallist (Asia), 3 times Silver medalist (Country - India), 8 times gold medalist (State - Karnataka)",
   },
   {
-    image: defaultMaleImage,
+    image:
+      imageSrc +
+      "damodar.png?alt=media&token=4ef9be04-3b2c-4268-92f6-9a99691d5631",
     title: "Damodar M | 1227",
     desc: "National Level Player, University Nationals",
   },
@@ -46,7 +50,6 @@ var aboutCards = [
 
 //function to display cards on the home page
 function displayCards() {
-  console.log("ok");
   let output = "";
   aboutCards.forEach(({ image, title, desc }) => {
     output += `<div class="col">

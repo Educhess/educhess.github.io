@@ -286,3 +286,9 @@ a:hover:not(.brand-logo) {
 .pricing__footer--bold {
   font-weight: bolder;
 }
+
+.dropdown-content {
+  z-index: 9999;
+  width: max-content !important;
+  height: auto !important;
+}

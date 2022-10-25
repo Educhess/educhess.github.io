@@ -1,6 +1,10 @@
 //main container as where we should add the data
 let pricingContainer = document.querySelector(".pricing");
-
+let country = localStorage.getItem("country")
+  ? localStorage.getItem("country")
+  : "ROW";
+// Others
+// India
 let pricingCards = [
   {
     title: "Short term",
@@ -13,9 +17,12 @@ let pricingCards = [
       "24x7 support from trainers",
       "Batch size 1:1",
     ],
-    currentPricing: "$200",
-    previousPricing: "$250",
-    pricingPerClass: "$12.5",
+    rowCurrentPricing: "$200",
+    rowPreviousPricing: "$250",
+    rowPricingPerClass: "$12.5",
+    indiaCurrentPricing: "₹6400",
+    indiaPreviousPricing: "₹8000",
+    indiaPricingPerClass: "₹400",
   },
   {
     title: "Mid term",
@@ -29,9 +36,12 @@ let pricingCards = [
       "24x7 support from trainers",
       "Batch size 1:1",
     ],
-    currentPricing: "$300",
-    previousPricing: "$350",
-    pricingPerClass: "$9.375",
+    rowCurrentPricing: "$384",
+    rowPreviousPricing: "$450",
+    rowPricingPerClass: "$12.5",
+    indiaCurrentPricing: "₹12,800",
+    indiaPreviousPricing: "₹15,000",
+    indiaPricingPerClass: "₹400",
   },
   {
     title: "Long term",
@@ -41,25 +51,32 @@ let pricingCards = [
       "Lifetime access to weekly tournaments",
       "Weekly assignments",
       "Access to all content",
+      "Internation Rating",
       "24x7 support from trainers",
       "Batch size 1:1",
     ],
-    currentPricing: "$600",
-    previousPricing: "$700",
-    pricingPerClass: "$12.5",
+    rowCurrentPricing: "$600",
+    rowPreviousPricing: "$700",
+    rowPricingPerClass: "$12.5",
+    indiaCurrentPricing: "₹19,200",
+    indiaPreviousPricing: "₹21,000",
+    indiaPricingPerClass: "₹400",
   },
 ];
 
 //function to display cards on the home page
-function displayCards() {
+function displayPricing() {
   let output = "";
   pricingCards.forEach(
     ({
       title = "",
       info = "",
-      currentPricing = "",
-      previousPricing = "",
-      pricingPerClass = "",
+      rowCurrentPricing = "",
+      rowPreviousPricing = "",
+      rowPricingPerClass = "",
+      indiaCurrentPricing = "",
+      indiaPreviousPricing = "",
+      indiaPricingPerClass = "",
     }) => {
       output += `<div class="col">
                 <div class="card" style="width: fit-content">
@@ -75,9 +92,21 @@ function displayCards() {
                             </ul>
                     </div>
                     <div class="card-action pricing__footer">
-                        <span class="pricing__footer--bold">${currentPricing}</span>
-                        <span class="pricing__footer--strike">${previousPricing}</span>
-                        <span class="uppercase">Price Per Class: ${pricingPerClass}</span>
+                        <span class="pricing__footer--bold">${
+                          country == "ROW"
+                            ? rowCurrentPricing
+                            : indiaCurrentPricing
+                        }</span>
+                        <span class="pricing__footer--strike">${
+                          country == "ROW"
+                            ? rowPreviousPricing
+                            : indiaPreviousPricing
+                        }</span>
+                        <span class="uppercase">Price Per Class: ${
+                          country == "ROW"
+                            ? rowPricingPerClass
+                            : indiaPricingPerClass
+                        }</span>
                         <span href="#" class="waves-effect waves-light btn-small" style="background-color:rgb(63, 25, 170)">BOOK</span>
                     </div>
                 </div>
@@ -88,4 +117,4 @@ function displayCards() {
   pricingContainer.innerHTML = output;
 }
 
-document.addEventListener("DOMContentLoaded", displayCards);
+document.addEventListener("DOMContentLoaded", displayPricing);
