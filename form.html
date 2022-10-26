@@ -1,0 +1,72 @@
+<html lang="en" data-theme="dark">
+    <head>
+        <link rel="stylesheet" href="form.css">
+
+        <script  src="https://code.jquery.com/jquery-3.4.1.js"  
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
+            crossorigin="anonymous">
+        </script>
+
+        <script>
+            function SubForm (){
+                $.ajax({
+                    url:'https://api.apispreadsheets.com/data/6MwFTTTpL5mGIHHP/',
+                    type:'post',
+                    data:$("#myForm").serializeArray(),
+                    success: function(){
+                    alert("Form Data Submitted :)")
+                    },
+                    error: function(){
+                    alert("There was an error :(")
+                    }
+                });
+            }
+        </script>
+    </head>
+
+        <body>
+            
+            <div class="contact-us">
+                <form id="myForm">
+                  <label for="name">NAME <em>&#x2a;</em></label>
+                    <input id="name" name="name" required type="text" />
+                <label for="email">EMAIL <em>&#x2a;</em></label>
+                    <input id="email" name="email" required type="email" />
+
+                <label for="country">Country <em>&#x2a;</em></label>           
+                    <select id="country" name="country" class="form-control" required>
+                        <option value="India" name="country">India</option>
+                        <option value="United States" name="country">United States</option>
+                        <option value="United Kingdom" name="country">United Kingdom</option>
+                        <option value="United Arab Emirates" name="country">United Arab Emirates</option>
+                        <option value="Ireland" name="country">Ireland</option>
+                        <option value="Singapore" name="country">Singapore</option>
+                        <option value="Korea" name="country">Korea</option>
+                        <option value="Others" name="country">Others</option><br>
+                    </select> <br><br>   
+                <label for="phone">PHONE <em>&#x2a;</em></label>
+                    <input id="phone" name="phone" pattern="[0-9]{10}" title="Enter only 10 digits" required type="tel" />
+                <label for="birthday">DOB <em>&#x2a;</em></label>
+                    <input type="date" id="birthday" name="birthday" required >
+                <label for="batch">BATCH(eg. Individual,group or both)<em>&#x2a;</em></label>
+                    <input type="text" id="batch" name="batch" required >
+                <label for="referal">REFERAL </label>
+                    <input id="referal" name="referal" type="text" />
+                <label for="message">YOUR MESSAGE </label>
+                    <textarea id="message" name="message" rows="4"></textarea>&#10;<br><br>     
+                </form>
+
+                <button onclick=SubForm()>SUBMIT</button>
+              </div>
+
+              <!-- <script src="assets/js/main.js"></script>
+              <script src="./assets/js/home.js"></script>
+                <script src="./assets/js/pricing.js"></script>
+                <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
+                <script src="assets/js/particle.js"></script> -->
+        </body>
+</html>
+
+
+
